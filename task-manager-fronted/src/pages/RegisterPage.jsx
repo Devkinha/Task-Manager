@@ -20,7 +20,7 @@ const RegisterPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5001/api/auth/register', formData);
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, formData);
             console.log('User registered successfully:', response.data);
 
             toast.success('Registration successful! Please sign in.');
